@@ -6,6 +6,49 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3D2A14A62E90EF9F00A94CB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A14A12E90EF9F00A94CB2 /* Main.storyboard */; };
+		3D2A14A72E90EF9F00A94CB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A149F2E90EF9F00A94CB2 /* LaunchScreen.storyboard */; };
+		3D2A14A82E90EF9F00A94CB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A149C2E90EF9F00A94CB2 /* Assets.xcassets */; };
+		3D2A14AA2E90EF9F00A94CB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14A22E90EF9F00A94CB2 /* SceneDelegate.swift */; };
+		3D2A14AB2E90EF9F00A94CB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14A32E90EF9F00A94CB2 /* ViewController.swift */; };
+		3D2A14AC2E90EF9F00A94CB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A149B2E90EF9F00A94CB2 /* AppDelegate.swift */; };
+		3D2A14B92E90EFC500A94CB2 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14B62E90EFC500A94CB2 /* APIURL.swift */; };
+		3D2A14BA2E90EFC500A94CB2 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14B82E90EFC500A94CB2 /* RetryPolicy.swift */; };
+		3D2A14BB2E90EFC500A94CB2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14B52E90EFC500A94CB2 /* APIService.swift */; };
+		3D2A14BC2E90EFC500A94CB2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14B72E90EFC500A94CB2 /* Endpoint.swift */; };
+		3D2A14C22E90F01300A94CB2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14BF2E90F01300A94CB2 /* APIError.swift */; };
+		3D2A14C32E90F01300A94CB2 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14C02E90F01300A94CB2 /* DomainError.swift */; };
+		3D2A14D62E90F6DA00A94CB2 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14D22E90F6DA00A94CB2 /* UserRepository.swift */; };
+		3D2A14D72E90F6DA00A94CB2 /* GetUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14D32E90F6DA00A94CB2 /* GetUserUseCase.swift */; };
+		3D2A14DA2E90F72200A94CB2 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14D92E90F71F00A94CB2 /* UserDTO.swift */; };
+		3D2A14DC2E90F77C00A94CB2 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14DB2E90F77800A94CB2 /* UserRepositoryImpl.swift */; };
+		3D2A14DF2E90F80100A94CB2 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14DE2E90F7FD00A94CB2 /* UserMapper.swift */; };
+		3D2A14E12E90F82100A94CB2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14E02E90F82000A94CB2 /* UserModel.swift */; };
+		3D2A14E32E90F9A300A94CB2 /* UserEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14E22E90F99C00A94CB2 /* UserEndPoints.swift */; };
+		3D2A14E72E90FF1F00A94CB2 /* UserUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14E52E90FA4100A94CB2 /* UserUseCaseTests.swift */; };
+		3D2A14E82E90FF2300A94CB2 /* UserMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14E62E90FED100A94CB2 /* UserMapperTests.swift */; };
+		3D2A14ED2E91037100A94CB2 /* UserRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14EC2E91036900A94CB2 /* UserRepoTests.swift */; };
+		3D2A14EF2E910B3A00A94CB2 /* FriendDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14EE2E910B3100A94CB2 /* FriendDTO.swift */; };
+		3D2A14F12E910B6300A94CB2 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14F02E910B5E00A94CB2 /* FriendModel.swift */; };
+		3D2A14F42E910C0000A94CB2 /* FriendEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14F32E910BFF00A94CB2 /* FriendEndPoints.swift */; };
+		3D2A14F82E91140900A94CB2 /* FriendRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14F72E9113F600A94CB2 /* FriendRepository.swift */; };
+		3D2A14FA2E91142E00A94CB2 /* FriendMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14F92E91142400A94CB2 /* FriendMapper.swift */; };
+		3D2A14FD2E91144200A94CB2 /* FriendRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14FC2E91143D00A94CB2 /* FriendRepositoryImpl.swift */; };
+		3D2A15462E9116BA00A94CB2 /* GetFriendListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A15452E9116AA00A94CB2 /* GetFriendListUseCase.swift */; };
+		3D2A154A2E9117D200A94CB2 /* GetFriendListAndInviteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A15492E9117D200A94CB2 /* GetFriendListAndInviteUseCase.swift */; };
+		3D2A154C2E91184900A94CB2 /* GetFriendListEmptyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A154B2E91184900A94CB2 /* GetFriendListEmptyUseCase.swift */; };
+		3D41A18B2E911A810027135B /* FriendListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A18A2E911A810027135B /* FriendListUseCaseTests.swift */; };
+		3D41A18E2E911DC50027135B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A18D2E911DBE0027135B /* String.swift */; };
+		3D41A1932E9129330027135B /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A1922E91292F0027135B /* MockAPIService.swift */; };
+		3D41A1952E9141EF0027135B /* FriendMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A1942E9141E00027135B /* FriendMapperTests.swift */; };
+		3D41A1962E9144C10027135B /* FriendListRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A18F2E91259E0027135B /* FriendListRepoTests.swift */; };
+		3D41A1982E914A2A0027135B /* FriendListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A1972E914A1D0027135B /* FriendListViewModelTests.swift */; };
+		3D41A19A2E914A630027135B /* FriendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A1992E914A620027135B /* FriendListViewModel.swift */; };
+		3DEC71D52E9169A1009ED399 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71D42E916998009ED399 /* DIContainer.swift */; };
+		3DEC71D72E916F6F009ED399 /* GetFriendListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71D62E916F62009ED399 /* GetFriendListProtocol.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		3D4D4C662E90EE7500121DC6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,41 +67,51 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D2A149B2E90EF9F00A94CB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3D2A149C2E90EF9F00A94CB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D2A149E2E90EF9F00A94CB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D2A14A02E90EF9F00A94CB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3D2A14A22E90EF9F00A94CB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3D2A14A32E90EF9F00A94CB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3D2A14B52E90EFC500A94CB2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		3D2A14B62E90EFC500A94CB2 /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
+		3D2A14B72E90EFC500A94CB2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		3D2A14B82E90EFC500A94CB2 /* RetryPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryPolicy.swift; sourceTree = "<group>"; };
+		3D2A14BF2E90F01300A94CB2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		3D2A14C02E90F01300A94CB2 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
+		3D2A14D22E90F6DA00A94CB2 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		3D2A14D32E90F6DA00A94CB2 /* GetUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserUseCase.swift; sourceTree = "<group>"; };
+		3D2A14D92E90F71F00A94CB2 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		3D2A14DB2E90F77800A94CB2 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
+		3D2A14DE2E90F7FD00A94CB2 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
+		3D2A14E02E90F82000A94CB2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		3D2A14E22E90F99C00A94CB2 /* UserEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPoints.swift; sourceTree = "<group>"; };
+		3D2A14E52E90FA4100A94CB2 /* UserUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCaseTests.swift; sourceTree = "<group>"; };
+		3D2A14E62E90FED100A94CB2 /* UserMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapperTests.swift; sourceTree = "<group>"; };
+		3D2A14E92E9101D200A94CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D2A14EC2E91036900A94CB2 /* UserRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoTests.swift; sourceTree = "<group>"; };
+		3D2A14EE2E910B3100A94CB2 /* FriendDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDTO.swift; sourceTree = "<group>"; };
+		3D2A14F02E910B5E00A94CB2 /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
+		3D2A14F32E910BFF00A94CB2 /* FriendEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendEndPoints.swift; sourceTree = "<group>"; };
+		3D2A14F72E9113F600A94CB2 /* FriendRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRepository.swift; sourceTree = "<group>"; };
+		3D2A14F92E91142400A94CB2 /* FriendMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendMapper.swift; sourceTree = "<group>"; };
+		3D2A14FC2E91143D00A94CB2 /* FriendRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRepositoryImpl.swift; sourceTree = "<group>"; };
+		3D2A15452E9116AA00A94CB2 /* GetFriendListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendListUseCase.swift; sourceTree = "<group>"; };
+		3D2A15492E9117D200A94CB2 /* GetFriendListAndInviteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendListAndInviteUseCase.swift; sourceTree = "<group>"; };
+		3D2A154B2E91184900A94CB2 /* GetFriendListEmptyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendListEmptyUseCase.swift; sourceTree = "<group>"; };
+		3D41A18A2E911A810027135B /* FriendListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListUseCaseTests.swift; sourceTree = "<group>"; };
+		3D41A18D2E911DBE0027135B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		3D41A18F2E91259E0027135B /* FriendListRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListRepoTests.swift; sourceTree = "<group>"; };
+		3D41A1922E91292F0027135B /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
+		3D41A1942E9141E00027135B /* FriendMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendMapperTests.swift; sourceTree = "<group>"; };
+		3D41A1972E914A1D0027135B /* FriendListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModelTests.swift; sourceTree = "<group>"; };
+		3D41A1992E914A620027135B /* FriendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModel.swift; sourceTree = "<group>"; };
 		3D4D4C4F2E90EE7300121DC6 /* KoKoFriendList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoKoFriendList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4D4C652E90EE7500121DC6 /* KoKoFriendListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoKoFriendListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4D4C6F2E90EE7500121DC6 /* KoKoFriendListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoKoFriendListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DEC71D42E916998009ED399 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		3DEC71D62E916F62009ED399 /* GetFriendListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendListProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3D4D4C772E90EE7500121DC6 /* Exceptions for "KoKoFriendList" folder in "KoKoFriendList" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 3D4D4C4E2E90EE7300121DC6 /* KoKoFriendList */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		3D4D4C512E90EE7300121DC6 /* KoKoFriendList */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				3D4D4C772E90EE7500121DC6 /* Exceptions for "KoKoFriendList" folder in "KoKoFriendList" target */,
-			);
-			path = KoKoFriendList;
-			sourceTree = "<group>";
-		};
-		3D4D4C682E90EE7500121DC6 /* KoKoFriendListTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = KoKoFriendListTests;
-			sourceTree = "<group>";
-		};
-		3D4D4C722E90EE7500121DC6 /* KoKoFriendListUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = KoKoFriendListUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3D4D4C4C2E90EE7300121DC6 /* Frameworks */ = {
@@ -85,12 +138,226 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D2A14992E90EF9F00A94CB2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC71D32E916988009ED399 /* DIContainer */,
+				3D2A14BD2E90EFDD00A94CB2 /* Network */,
+				3D2A14C12E90F01300A94CB2 /* Errors */,
+				3D41A18C2E911DA10027135B /* Extension */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3D2A149A2E90EF9F00A94CB2 /* Future */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A14D12E90F6C200A94CB2 /* FirendList */,
+				3D2A14CD2E90F6A100A94CB2 /* User */,
+				3D2A14C42E90F33200A94CB2 /* Friend */,
+			);
+			path = Future;
+			sourceTree = "<group>";
+		};
+		3D2A14A42E90EF9F00A94CB2 /* KoKoFriendList */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A14992E90EF9F00A94CB2 /* Core */,
+				3D2A149A2E90EF9F00A94CB2 /* Future */,
+				3D2A149B2E90EF9F00A94CB2 /* AppDelegate.swift */,
+				3D2A149C2E90EF9F00A94CB2 /* Assets.xcassets */,
+				3D2A149F2E90EF9F00A94CB2 /* LaunchScreen.storyboard */,
+				3D2A14A12E90EF9F00A94CB2 /* Main.storyboard */,
+				3D2A14A22E90EF9F00A94CB2 /* SceneDelegate.swift */,
+				3D2A14A32E90EF9F00A94CB2 /* ViewController.swift */,
+				3D2A14E92E9101D200A94CB2 /* Info.plist */,
+			);
+			path = KoKoFriendList;
+			sourceTree = "<group>";
+		};
+		3D2A14AE2E90EFAB00A94CB2 /* KoKoFriendListTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D41A1912E9129010027135B /* MockAPIService */,
+				3D2A154D2E9119B700A94CB2 /* FriendListsTest */,
+				3D2A14E42E90FA3600A94CB2 /* UserTests */,
+			);
+			path = KoKoFriendListTests;
+			sourceTree = "<group>";
+		};
+		3D2A14BD2E90EFDD00A94CB2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A14B52E90EFC500A94CB2 /* APIService.swift */,
+				3D2A14B62E90EFC500A94CB2 /* APIURL.swift */,
+				3D2A14B72E90EFC500A94CB2 /* Endpoint.swift */,
+				3D2A14B82E90EFC500A94CB2 /* RetryPolicy.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3D2A14C12E90F01300A94CB2 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A14BF2E90F01300A94CB2 /* APIError.swift */,
+				3D2A14C02E90F01300A94CB2 /* DomainError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		3D2A14C42E90F33200A94CB2 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A14C72E90F35800A94CB2 /* Presentation */,
+				3D2A14C62E90F33F00A94CB2 /* Domain */,
+				3D2A14C52E90F33C00A94CB2 /* Data */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		3D2A14C52E90F33C00A94CB2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A14F32E910BFF00A94CB2 /* FriendEndPoints.swift */,
+				3D2A14EE2E910B3100A94CB2 /* FriendDTO.swift */,
+				3D2A14F92E91142400A94CB2 /* FriendMapper.swift */,
+				3D2A14FC2E91143D00A94CB2 /* FriendRepositoryImpl.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3D2A14C62E90F33F00A94CB2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A14F72E9113F600A94CB2 /* FriendRepository.swift */,
+				3D2A14F02E910B5E00A94CB2 /* FriendModel.swift */,
+				3D2A14C82E90F36000A94CB2 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3D2A14C72E90F35800A94CB2 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3D41A1992E914A620027135B /* FriendListViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3D2A14C82E90F36000A94CB2 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC71D62E916F62009ED399 /* GetFriendListProtocol.swift */,
+				3D2A15452E9116AA00A94CB2 /* GetFriendListUseCase.swift */,
+				3D2A15492E9117D200A94CB2 /* GetFriendListAndInviteUseCase.swift */,
+				3D2A154B2E91184900A94CB2 /* GetFriendListEmptyUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		3D2A14CD2E90F6A100A94CB2 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A14D02E90F6B800A94CB2 /* Persentation */,
+				3D2A14D52E90F6DA00A94CB2 /* Domain */,
+				3D2A14CE2E90F6AB00A94CB2 /* Data */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		3D2A14CE2E90F6AB00A94CB2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A14E22E90F99C00A94CB2 /* UserEndPoints.swift */,
+				3D2A14D92E90F71F00A94CB2 /* UserDTO.swift */,
+				3D2A14DE2E90F7FD00A94CB2 /* UserMapper.swift */,
+				3D2A14DB2E90F77800A94CB2 /* UserRepositoryImpl.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3D2A14D02E90F6B800A94CB2 /* Persentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Persentation;
+			sourceTree = "<group>";
+		};
+		3D2A14D12E90F6C200A94CB2 /* FirendList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FirendList;
+			sourceTree = "<group>";
+		};
+		3D2A14D42E90F6DA00A94CB2 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A14D32E90F6DA00A94CB2 /* GetUserUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		3D2A14D52E90F6DA00A94CB2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A14E02E90F82000A94CB2 /* UserModel.swift */,
+				3D2A14D22E90F6DA00A94CB2 /* UserRepository.swift */,
+				3D2A14D42E90F6DA00A94CB2 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3D2A14E42E90FA3600A94CB2 /* UserTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A14E52E90FA4100A94CB2 /* UserUseCaseTests.swift */,
+				3D2A14EC2E91036900A94CB2 /* UserRepoTests.swift */,
+				3D2A14E62E90FED100A94CB2 /* UserMapperTests.swift */,
+			);
+			path = UserTests;
+			sourceTree = "<group>";
+		};
+		3D2A14EB2E91034A00A94CB2 /* KoKoFriendListUITests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = KoKoFriendListUITests;
+			sourceTree = "<group>";
+		};
+		3D2A154D2E9119B700A94CB2 /* FriendListsTest */ = {
+			isa = PBXGroup;
+			children = (
+				3D41A1972E914A1D0027135B /* FriendListViewModelTests.swift */,
+				3D41A18A2E911A810027135B /* FriendListUseCaseTests.swift */,
+				3D41A18F2E91259E0027135B /* FriendListRepoTests.swift */,
+				3D41A1942E9141E00027135B /* FriendMapperTests.swift */,
+			);
+			path = FriendListsTest;
+			sourceTree = "<group>";
+		};
+		3D41A18C2E911DA10027135B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3D41A18D2E911DBE0027135B /* String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3D41A1912E9129010027135B /* MockAPIService */ = {
+			isa = PBXGroup;
+			children = (
+				3D41A1922E91292F0027135B /* MockAPIService.swift */,
+			);
+			path = MockAPIService;
+			sourceTree = "<group>";
+		};
 		3D4D4C462E90EE7300121DC6 = {
 			isa = PBXGroup;
 			children = (
-				3D4D4C512E90EE7300121DC6 /* KoKoFriendList */,
-				3D4D4C682E90EE7500121DC6 /* KoKoFriendListTests */,
-				3D4D4C722E90EE7500121DC6 /* KoKoFriendListUITests */,
+				3D2A14A42E90EF9F00A94CB2 /* KoKoFriendList */,
+				3D2A14AE2E90EFAB00A94CB2 /* KoKoFriendListTests */,
+				3D2A14EB2E91034A00A94CB2 /* KoKoFriendListUITests */,
 				3D4D4C502E90EE7300121DC6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +370,14 @@
 				3D4D4C6F2E90EE7500121DC6 /* KoKoFriendListUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3DEC71D32E916988009ED399 /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC71D42E916998009ED399 /* DIContainer.swift */,
+			);
+			path = DIContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,9 +394,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				3D4D4C512E90EE7300121DC6 /* KoKoFriendList */,
 			);
 			name = KoKoFriendList;
 			packageProductDependencies = (
@@ -143,9 +415,6 @@
 			dependencies = (
 				3D4D4C672E90EE7500121DC6 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				3D4D4C682E90EE7500121DC6 /* KoKoFriendListTests */,
-			);
 			name = KoKoFriendListTests;
 			packageProductDependencies = (
 			);
@@ -165,9 +434,6 @@
 			);
 			dependencies = (
 				3D4D4C712E90EE7500121DC6 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				3D4D4C722E90EE7500121DC6 /* KoKoFriendListUITests */,
 			);
 			name = KoKoFriendListUITests;
 			packageProductDependencies = (
@@ -225,6 +491,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2A14A62E90EF9F00A94CB2 /* Main.storyboard in Resources */,
+				3D2A14A72E90EF9F00A94CB2 /* LaunchScreen.storyboard in Resources */,
+				3D2A14A82E90EF9F00A94CB2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +518,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DEC71D52E9169A1009ED399 /* DIContainer.swift in Sources */,
+				3D2A15462E9116BA00A94CB2 /* GetFriendListUseCase.swift in Sources */,
+				3D2A14DC2E90F77C00A94CB2 /* UserRepositoryImpl.swift in Sources */,
+				3D2A14E32E90F9A300A94CB2 /* UserEndPoints.swift in Sources */,
+				3D2A14EF2E910B3A00A94CB2 /* FriendDTO.swift in Sources */,
+				3D2A14F42E910C0000A94CB2 /* FriendEndPoints.swift in Sources */,
+				3D2A14D62E90F6DA00A94CB2 /* UserRepository.swift in Sources */,
+				3D2A14D72E90F6DA00A94CB2 /* GetUserUseCase.swift in Sources */,
+				3D2A14B92E90EFC500A94CB2 /* APIURL.swift in Sources */,
+				3D2A14BA2E90EFC500A94CB2 /* RetryPolicy.swift in Sources */,
+				3D2A14BB2E90EFC500A94CB2 /* APIService.swift in Sources */,
+				3D2A14C22E90F01300A94CB2 /* APIError.swift in Sources */,
+				3D2A14DF2E90F80100A94CB2 /* UserMapper.swift in Sources */,
+				3D2A14FA2E91142E00A94CB2 /* FriendMapper.swift in Sources */,
+				3D2A14DA2E90F72200A94CB2 /* UserDTO.swift in Sources */,
+				3D41A18E2E911DC50027135B /* String.swift in Sources */,
+				3D2A14F12E910B6300A94CB2 /* FriendModel.swift in Sources */,
+				3D2A154A2E9117D200A94CB2 /* GetFriendListAndInviteUseCase.swift in Sources */,
+				3D2A14F82E91140900A94CB2 /* FriendRepository.swift in Sources */,
+				3D2A154C2E91184900A94CB2 /* GetFriendListEmptyUseCase.swift in Sources */,
+				3D2A14FD2E91144200A94CB2 /* FriendRepositoryImpl.swift in Sources */,
+				3D2A14C32E90F01300A94CB2 /* DomainError.swift in Sources */,
+				3DEC71D72E916F6F009ED399 /* GetFriendListProtocol.swift in Sources */,
+				3D2A14BC2E90EFC500A94CB2 /* Endpoint.swift in Sources */,
+				3D2A14AA2E90EF9F00A94CB2 /* SceneDelegate.swift in Sources */,
+				3D41A19A2E914A630027135B /* FriendListViewModel.swift in Sources */,
+				3D2A14AB2E90EF9F00A94CB2 /* ViewController.swift in Sources */,
+				3D2A14E12E90F82100A94CB2 /* UserModel.swift in Sources */,
+				3D2A14AC2E90EF9F00A94CB2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +554,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D41A1962E9144C10027135B /* FriendListRepoTests.swift in Sources */,
+				3D41A1932E9129330027135B /* MockAPIService.swift in Sources */,
+				3D2A14E72E90FF1F00A94CB2 /* UserUseCaseTests.swift in Sources */,
+				3D2A14E82E90FF2300A94CB2 /* UserMapperTests.swift in Sources */,
+				3D41A1982E914A2A0027135B /* FriendListViewModelTests.swift in Sources */,
+				3D41A1952E9141EF0027135B /* FriendMapperTests.swift in Sources */,
+				3D2A14ED2E91037100A94CB2 /* UserRepoTests.swift in Sources */,
+				3D41A18B2E911A810027135B /* FriendListUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +586,25 @@
 			targetProxy = 3D4D4C702E90EE7500121DC6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3D2A149F2E90EF9F00A94CB2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D2A149E2E90EF9F00A94CB2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3D2A14A12E90EF9F00A94CB2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D2A14A02E90EF9F00A94CB2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3D4D4C792E90EE7500121DC6 /* Debug */ = {
