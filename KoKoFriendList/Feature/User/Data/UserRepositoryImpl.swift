@@ -18,7 +18,7 @@ class UserRepositoryImpl: UserRepository {
     
     func fetchUser() async throws -> UserModel {
         do {
-            let userDTO: UserResponseDTO = try await apiService.request(UserEndPoints.getUser(), policy: .networkAnd5xx)
+            let userDTO: UserResponseDTO = try await apiService.request(UserEndPoints.getUser())
             return try userDTO.toDomain()
         } catch let apiError as APIError {
             throw DomainError.from(apiError: apiError)

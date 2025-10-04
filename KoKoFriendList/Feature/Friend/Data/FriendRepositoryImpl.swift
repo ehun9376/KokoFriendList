@@ -18,7 +18,7 @@ class FriendRepositoryImpl: FriendRepository {
     func fetchFriends1() async throws -> [FriendModel] {
         
         do {
-            let friendDTO: FriendDTO = try await self.apiService.request(FriendEndPoints.getFriend1(), policy: .networkAnd5xx)
+            let friendDTO: FriendDTO = try await self.apiService.request(FriendEndPoints.getFriend1())
             return friendDTO.toDomain()
         } catch let apiError as APIError {
             throw DomainError.from(apiError: apiError)
@@ -33,7 +33,7 @@ class FriendRepositoryImpl: FriendRepository {
     func fetchFriends2() async throws -> [FriendModel] {
         
         do {
-            let friendDTO: FriendDTO = try await self.apiService.request(FriendEndPoints.getFriend2(), policy: .networkAnd5xx)
+            let friendDTO: FriendDTO = try await self.apiService.request(FriendEndPoints.getFriend2())
             return friendDTO.toDomain()
         } catch let apiError as APIError {
             throw DomainError.from(apiError: apiError)
@@ -48,7 +48,7 @@ class FriendRepositoryImpl: FriendRepository {
     func fetchFriendsAndInviteList() async throws -> [FriendModel] {
         
         do {
-            let friendDTO: FriendDTO = try await self.apiService.request(FriendEndPoints.getFriend3(), policy: .networkAnd5xx)
+            let friendDTO: FriendDTO = try await self.apiService.request(FriendEndPoints.getFriend3())
             return friendDTO.toDomain()
         } catch let apiError as APIError {
             throw DomainError.from(apiError: apiError)
@@ -63,7 +63,7 @@ class FriendRepositoryImpl: FriendRepository {
     func fetchEmptyFriends() async throws -> [FriendModel] {
         
         do {
-            let friendDTO: FriendDTO = try await self.apiService.request(FriendEndPoints.getFriend4(), policy: .networkAnd5xx)
+            let friendDTO: FriendDTO = try await self.apiService.request(FriendEndPoints.getFriend4())
             return friendDTO.toDomain()
         } catch let apiError as APIError {
             throw DomainError.from(apiError: apiError)

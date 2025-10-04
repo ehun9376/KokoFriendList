@@ -6,13 +6,10 @@
 //
 
 import Foundation
-import Combine
 
 protocol APIServiceProtocol {
-    func request<T: Decodable>(_ endpoint: Endpoint, policy: RetryPolicy?) async throws -> T
+    func request<T: Decodable>(_ endpoint: Endpoint) async throws -> T
 }
-
-
 
 class APIService: APIServiceProtocol {
     
@@ -30,7 +27,29 @@ class APIService: APIServiceProtocol {
         self.encoder = encoder
     }
     
-    func request<T: Decodable>(_ endpoint: Endpoint, policy: RetryPolicy?) async throws -> T {
+    func request<T: Decodable>(_ endpoint: Endpoint) async throws -> T {
+        
+        
+        var lastError: Error?
+        
+        for attempt in 0..<3 {
+            do {
+                return try await singleRequest(endpoint)
+            } catch let error as APIError {
+                lastError = error
+                try? await Task.sleep(nanoseconds: UInt64(1 * 1_000_000_000))
+                continue
+            } catch {
+                lastError = error
+            }
+        }
+        
+        throw lastError ?? APIError.unknown
+        
+    }
+    
+    /// 單次請求邏輯
+    private func singleRequest<T: Decodable>(_ endpoint: Endpoint) async throws -> T {
         let urlText = endpoint.url.getURL()
         
         guard let url = URL(string: urlText) else {

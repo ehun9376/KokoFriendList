@@ -13,7 +13,7 @@ class MockAPIService: APIServiceProtocol {
     var result: Result<Decodable, APIError>?
     
     
-    func request<T>(_ endpoint: Endpoint, policy: RetryPolicy?) async throws -> T where T : Decodable {
+    func request<T>(_ endpoint: Endpoint) async throws -> T where T : Decodable {
         switch result {
         case .success(let success):
        
