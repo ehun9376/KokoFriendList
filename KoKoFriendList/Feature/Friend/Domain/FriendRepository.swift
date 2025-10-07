@@ -11,6 +11,7 @@ protocol FriendRepository {
     func fetchFriends2() async throws -> [FriendModel]
     func fetchFriendsAndInviteList() async throws -> [FriendModel]
     func fetchEmptyFriends() async throws -> [FriendModel]
+    func fetchFriendBadge(_ type: FriendListPageType) async -> [FriendListTab: Int]
     
     
 }

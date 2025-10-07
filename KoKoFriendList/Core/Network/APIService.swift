@@ -32,7 +32,7 @@ class APIService: APIServiceProtocol {
         
         var lastError: Error?
         
-        for attempt in 0..<3 {
+        for _ in 0..<3 {
             do {
                 return try await singleRequest(endpoint)
             } catch let error as APIError {

@@ -6,6 +6,7 @@
 //
 
 class GetFriendListEmptyUseCase: FriendListFetchingUseCase {
+    
     var repository: FriendRepository
     
     init(repository: FriendRepository) {
@@ -15,4 +16,5 @@ class GetFriendListEmptyUseCase: FriendListFetchingUseCase {
     func execute() async throws -> [FriendModel] {
         try await repository.fetchEmptyFriends()
     }
+    
 }

@@ -11,7 +11,6 @@
 		3D2A14A72E90EF9F00A94CB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A149F2E90EF9F00A94CB2 /* LaunchScreen.storyboard */; };
 		3D2A14A82E90EF9F00A94CB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A149C2E90EF9F00A94CB2 /* Assets.xcassets */; };
 		3D2A14AA2E90EF9F00A94CB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14A22E90EF9F00A94CB2 /* SceneDelegate.swift */; };
-		3D2A14AB2E90EF9F00A94CB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14A32E90EF9F00A94CB2 /* ViewController.swift */; };
 		3D2A14AC2E90EF9F00A94CB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A149B2E90EF9F00A94CB2 /* AppDelegate.swift */; };
 		3D2A14B92E90EFC500A94CB2 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14B62E90EFC500A94CB2 /* APIURL.swift */; };
 		3D2A14BB2E90EFC500A94CB2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A14B52E90EFC500A94CB2 /* APIService.swift */; };
@@ -46,6 +45,30 @@
 		3D41A19A2E914A630027135B /* FriendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D41A1992E914A620027135B /* FriendListViewModel.swift */; };
 		3DEC71D52E9169A1009ED399 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71D42E916998009ED399 /* DIContainer.swift */; };
 		3DEC71D72E916F6F009ED399 /* GetFriendListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71D62E916F62009ED399 /* GetFriendListProtocol.swift */; };
+		3DEC71DA2E940CE2009ED399 /* TableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71D82E940CE2009ED399 /* TableViewAdapter.swift */; };
+		3DEC71DC2E940D3B009ED399 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71DB2E940D33009ED399 /* FriendListViewController.swift */; };
+		3DEC71DF2E941040009ED399 /* TopUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71DE2E94102D009ED399 /* TopUserInfoView.swift */; };
+		3DEC71E82E9411F6009ED399 /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71E72E9411EF009ED399 /* EnterViewController.swift */; };
+		3DEC71EC2E94120C009ED399 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71EA2E94120C009ED399 /* HomeViewController.swift */; };
+		3DEC71F32E9414B5009ED399 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71ED2E9414B5009ED399 /* SimpleButton.swift */; };
+		3DEC71F62E9415D1009ED399 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71F52E9415BF009ED399 /* TabBarItem.swift */; };
+		3DEC71F82E94163D009ED399 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71F72E941635009ED399 /* HomeViewModel.swift */; };
+		3DEC71FB2E94170C009ED399 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC71FA2E941706009ED399 /* TabView.swift */; };
+		3DEC72032E94B458009ED399 /* color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DEC72022E94B458009ED399 /* color.xcassets */; };
+		3DEC72052E94BBD6009ED399 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC72042E94BBD1009ED399 /* UIView.swift */; };
+		3DEC72072E94CFF5009ED399 /* FunctionSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC72062E94CFE8009ED399 /* FunctionSwitcher.swift */; };
+		3DEC72092E94D08A009ED399 /* FriendListPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC72082E94D089009ED399 /* FriendListPageType.swift */; };
+		3DEC720B2E94D0A6009ED399 /* FriendListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC720A2E94D094009ED399 /* FriendListTab.swift */; };
+		3DEC720D2E94D548009ED399 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC720C2E94D548009ED399 /* TabButton.swift */; };
+		3DEC720F2E94E6B4009ED399 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC720E2E94E6B0009ED399 /* UIStackView.swift */; };
+		3DEC72112E94FCB5009ED399 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC72102E94FCAF009ED399 /* UIButton.swift */; };
+		3DEC72132E94FD82009ED399 /* EmptyDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC72122E94FD79009ED399 /* EmptyDataCell.swift */; };
+		3DEC72162E94FE8F009ED399 /* EmptyDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DEC72152E94FE8F009ED399 /* EmptyDataCell.xib */; };
+		3DEC72192E9518D8009ED399 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC72182E9518D8009ED399 /* NSMutableAttributedString.swift */; };
+		3DEC721B2E951955009ED399 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC721A2E951953009ED399 /* Array.swift */; };
+		3DEC721F2E952078009ED399 /* GetBadgeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC721E2E952076009ED399 /* GetBadgeUseCase.swift */; };
+		3DEC72212E957B6D009ED399 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC72202E957B66009ED399 /* FriendCell.swift */; };
+		3DEC72232E957F31009ED399 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DEC72222E957F31009ED399 /* FriendCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +94,6 @@
 		3D2A149E2E90EF9F00A94CB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D2A14A02E90EF9F00A94CB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D2A14A22E90EF9F00A94CB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3D2A14A32E90EF9F00A94CB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D2A14B52E90EFC500A94CB2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		3D2A14B62E90EFC500A94CB2 /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		3D2A14B72E90EFC500A94CB2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -109,6 +131,30 @@
 		3D4D4C6F2E90EE7500121DC6 /* KoKoFriendListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoKoFriendListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEC71D42E916998009ED399 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		3DEC71D62E916F62009ED399 /* GetFriendListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendListProtocol.swift; sourceTree = "<group>"; };
+		3DEC71D82E940CE2009ED399 /* TableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdapter.swift; sourceTree = "<group>"; };
+		3DEC71DB2E940D33009ED399 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
+		3DEC71DE2E94102D009ED399 /* TopUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUserInfoView.swift; sourceTree = "<group>"; };
+		3DEC71E72E9411EF009ED399 /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
+		3DEC71EA2E94120C009ED399 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3DEC71ED2E9414B5009ED399 /* SimpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
+		3DEC71F52E9415BF009ED399 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		3DEC71F72E941635009ED399 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3DEC71FA2E941706009ED399 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		3DEC72022E94B458009ED399 /* color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = color.xcassets; sourceTree = "<group>"; };
+		3DEC72042E94BBD1009ED399 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		3DEC72062E94CFE8009ED399 /* FunctionSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionSwitcher.swift; sourceTree = "<group>"; };
+		3DEC72082E94D089009ED399 /* FriendListPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListPageType.swift; sourceTree = "<group>"; };
+		3DEC720A2E94D094009ED399 /* FriendListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTab.swift; sourceTree = "<group>"; };
+		3DEC720C2E94D548009ED399 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		3DEC720E2E94E6B0009ED399 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		3DEC72102E94FCAF009ED399 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		3DEC72122E94FD79009ED399 /* EmptyDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataCell.swift; sourceTree = "<group>"; };
+		3DEC72152E94FE8F009ED399 /* EmptyDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDataCell.xib; sourceTree = "<group>"; };
+		3DEC72182E9518D8009ED399 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
+		3DEC721A2E951953009ED399 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		3DEC721E2E952076009ED399 /* GetBadgeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBadgeUseCase.swift; sourceTree = "<group>"; };
+		3DEC72202E957B66009ED399 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		3DEC72222E957F31009ED399 /* FriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,10 +185,12 @@
 		3D2A14992E90EF9F00A94CB2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3DEC71D92E940CE2009ED399 /* Adapter */,
 				3DEC71D32E916988009ED399 /* DIContainer */,
 				3D2A14BD2E90EFDD00A94CB2 /* Network */,
 				3D2A14C12E90F01300A94CB2 /* Errors */,
 				3D41A18C2E911DA10027135B /* Extension */,
+				3DEC71F12E9414B5009ED399 /* Widgets */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -150,7 +198,8 @@
 		3D2A149A2E90EF9F00A94CB2 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				3D2A14D12E90F6C200A94CB2 /* FirendList */,
+				3DEC71E62E9411E8009ED399 /* Enter */,
+				3DEC71E42E9411BD009ED399 /* Home */,
 				3D2A14CD2E90F6A100A94CB2 /* User */,
 				3D2A14C42E90F33200A94CB2 /* Friend */,
 			);
@@ -163,11 +212,11 @@
 				3D2A14992E90EF9F00A94CB2 /* Core */,
 				3D2A149A2E90EF9F00A94CB2 /* Feature */,
 				3D2A149B2E90EF9F00A94CB2 /* AppDelegate.swift */,
+				3DEC72022E94B458009ED399 /* color.xcassets */,
 				3D2A149C2E90EF9F00A94CB2 /* Assets.xcassets */,
 				3D2A149F2E90EF9F00A94CB2 /* LaunchScreen.storyboard */,
 				3D2A14A12E90EF9F00A94CB2 /* Main.storyboard */,
 				3D2A14A22E90EF9F00A94CB2 /* SceneDelegate.swift */,
-				3D2A14A32E90EF9F00A94CB2 /* ViewController.swift */,
 				3D2A14E92E9101D200A94CB2 /* Info.plist */,
 			);
 			path = KoKoFriendList;
@@ -226,6 +275,8 @@
 		3D2A14C62E90F33F00A94CB2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				3DEC72082E94D089009ED399 /* FriendListPageType.swift */,
+				3DEC720A2E94D094009ED399 /* FriendListTab.swift */,
 				3D2A14F72E9113F600A94CB2 /* FriendRepository.swift */,
 				3D2A14F02E910B5E00A94CB2 /* FriendModel.swift */,
 				3D2A14C82E90F36000A94CB2 /* UseCase */,
@@ -236,7 +287,10 @@
 		3D2A14C72E90F35800A94CB2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				3DEC71E32E9410D0009ED399 /* Cells */,
+				3DEC71DD2E941027009ED399 /* Views */,
 				3D41A1992E914A620027135B /* FriendListViewModel.swift */,
+				3DEC71DB2E940D33009ED399 /* FriendListViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -248,6 +302,7 @@
 				3D2A15452E9116AA00A94CB2 /* GetFriendListUseCase.swift */,
 				3D2A15492E9117D200A94CB2 /* GetFriendListAndInviteUseCase.swift */,
 				3D2A154B2E91184900A94CB2 /* GetFriendListEmptyUseCase.swift */,
+				3DEC721E2E952076009ED399 /* GetBadgeUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -278,13 +333,6 @@
 			children = (
 			);
 			path = Persentation;
-			sourceTree = "<group>";
-		};
-		3D2A14D12E90F6C200A94CB2 /* FirendList */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FirendList;
 			sourceTree = "<group>";
 		};
 		3D2A14D42E90F6DA00A94CB2 /* UseCase */ = {
@@ -336,6 +384,11 @@
 		3D41A18C2E911DA10027135B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3DEC721A2E951953009ED399 /* Array.swift */,
+				3DEC72182E9518D8009ED399 /* NSMutableAttributedString.swift */,
+				3DEC72102E94FCAF009ED399 /* UIButton.swift */,
+				3DEC72042E94BBD1009ED399 /* UIView.swift */,
+				3DEC720E2E94E6B0009ED399 /* UIStackView.swift */,
 				3D41A18D2E911DBE0027135B /* String.swift */,
 			);
 			path = Extension;
@@ -375,6 +428,102 @@
 				3DEC71D42E916998009ED399 /* DIContainer.swift */,
 			);
 			path = DIContainer;
+			sourceTree = "<group>";
+		};
+		3DEC71D92E940CE2009ED399 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC71D82E940CE2009ED399 /* TableViewAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		3DEC71DD2E941027009ED399 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC71DE2E94102D009ED399 /* TopUserInfoView.swift */,
+				3DEC72062E94CFE8009ED399 /* FunctionSwitcher.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3DEC71E32E9410D0009ED399 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC72202E957B66009ED399 /* FriendCell.swift */,
+				3DEC72222E957F31009ED399 /* FriendCell.xib */,
+				3DEC72122E94FD79009ED399 /* EmptyDataCell.swift */,
+				3DEC72152E94FE8F009ED399 /* EmptyDataCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3DEC71E42E9411BD009ED399 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC71F42E9415B6009ED399 /* Domain */,
+				3DEC71EB2E94120C009ED399 /* Presentation */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3DEC71E62E9411E8009ED399 /* Enter */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC71E92E9411FA009ED399 /* Presentation */,
+			);
+			path = Enter;
+			sourceTree = "<group>";
+		};
+		3DEC71E92E9411FA009ED399 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC71E72E9411EF009ED399 /* EnterViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3DEC71EB2E94120C009ED399 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC71F92E9416F9009ED399 /* Views */,
+				3DEC71F72E941635009ED399 /* HomeViewModel.swift */,
+				3DEC71EA2E94120C009ED399 /* HomeViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3DEC71EE2E9414B5009ED399 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC720C2E94D548009ED399 /* TabButton.swift */,
+				3DEC71ED2E9414B5009ED399 /* SimpleButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		3DEC71F12E9414B5009ED399 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC71EE2E9414B5009ED399 /* Buttons */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		3DEC71F42E9415B6009ED399 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC71F52E9415BF009ED399 /* TabBarItem.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3DEC71F92E9416F9009ED399 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC71FA2E941706009ED399 /* TabView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,6 +638,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D2A14A62E90EF9F00A94CB2 /* Main.storyboard in Resources */,
+				3DEC72232E957F31009ED399 /* FriendCell.xib in Resources */,
+				3DEC72162E94FE8F009ED399 /* EmptyDataCell.xib in Resources */,
+				3DEC72032E94B458009ED399 /* color.xcassets in Resources */,
 				3D2A14A72E90EF9F00A94CB2 /* LaunchScreen.storyboard in Resources */,
 				3D2A14A82E90EF9F00A94CB2 /* Assets.xcassets in Resources */,
 			);
@@ -517,31 +669,51 @@
 			files = (
 				3DEC71D52E9169A1009ED399 /* DIContainer.swift in Sources */,
 				3D2A15462E9116BA00A94CB2 /* GetFriendListUseCase.swift in Sources */,
+				3DEC71DF2E941040009ED399 /* TopUserInfoView.swift in Sources */,
 				3D2A14DC2E90F77C00A94CB2 /* UserRepositoryImpl.swift in Sources */,
+				3DEC72052E94BBD6009ED399 /* UIView.swift in Sources */,
 				3D2A14E32E90F9A300A94CB2 /* UserEndPoints.swift in Sources */,
 				3D2A14EF2E910B3A00A94CB2 /* FriendDTO.swift in Sources */,
 				3D2A14F42E910C0000A94CB2 /* FriendEndPoints.swift in Sources */,
+				3DEC72192E9518D8009ED399 /* NSMutableAttributedString.swift in Sources */,
+				3DEC71FB2E94170C009ED399 /* TabView.swift in Sources */,
 				3D2A14D62E90F6DA00A94CB2 /* UserRepository.swift in Sources */,
+				3DEC71DA2E940CE2009ED399 /* TableViewAdapter.swift in Sources */,
 				3D2A14D72E90F6DA00A94CB2 /* GetUserUseCase.swift in Sources */,
 				3D2A14B92E90EFC500A94CB2 /* APIURL.swift in Sources */,
 				3D2A14BB2E90EFC500A94CB2 /* APIService.swift in Sources */,
 				3D2A14C22E90F01300A94CB2 /* APIError.swift in Sources */,
+				3DEC72132E94FD82009ED399 /* EmptyDataCell.swift in Sources */,
 				3D2A14DF2E90F80100A94CB2 /* UserMapper.swift in Sources */,
 				3D2A14FA2E91142E00A94CB2 /* FriendMapper.swift in Sources */,
+				3DEC72212E957B6D009ED399 /* FriendCell.swift in Sources */,
+				3DEC720B2E94D0A6009ED399 /* FriendListTab.swift in Sources */,
 				3D2A14DA2E90F72200A94CB2 /* UserDTO.swift in Sources */,
+				3DEC71F32E9414B5009ED399 /* SimpleButton.swift in Sources */,
+				3DEC71E82E9411F6009ED399 /* EnterViewController.swift in Sources */,
+				3DEC71F82E94163D009ED399 /* HomeViewModel.swift in Sources */,
 				3D41A18E2E911DC50027135B /* String.swift in Sources */,
 				3D2A14F12E910B6300A94CB2 /* FriendModel.swift in Sources */,
+				3DEC71EC2E94120C009ED399 /* HomeViewController.swift in Sources */,
+				3DEC72092E94D08A009ED399 /* FriendListPageType.swift in Sources */,
 				3D2A154A2E9117D200A94CB2 /* GetFriendListAndInviteUseCase.swift in Sources */,
+				3DEC721B2E951955009ED399 /* Array.swift in Sources */,
 				3D2A14F82E91140900A94CB2 /* FriendRepository.swift in Sources */,
+				3DEC720D2E94D548009ED399 /* TabButton.swift in Sources */,
 				3D2A154C2E91184900A94CB2 /* GetFriendListEmptyUseCase.swift in Sources */,
 				3D2A14FD2E91144200A94CB2 /* FriendRepositoryImpl.swift in Sources */,
 				3D2A14C32E90F01300A94CB2 /* DomainError.swift in Sources */,
+				3DEC71F62E9415D1009ED399 /* TabBarItem.swift in Sources */,
+				3DEC71DC2E940D3B009ED399 /* FriendListViewController.swift in Sources */,
 				3DEC71D72E916F6F009ED399 /* GetFriendListProtocol.swift in Sources */,
+				3DEC72112E94FCB5009ED399 /* UIButton.swift in Sources */,
 				3D2A14BC2E90EFC500A94CB2 /* Endpoint.swift in Sources */,
 				3D2A14AA2E90EF9F00A94CB2 /* SceneDelegate.swift in Sources */,
+				3DEC720F2E94E6B4009ED399 /* UIStackView.swift in Sources */,
 				3D41A19A2E914A630027135B /* FriendListViewModel.swift in Sources */,
-				3D2A14AB2E90EF9F00A94CB2 /* ViewController.swift in Sources */,
+				3DEC721F2E952078009ED399 /* GetBadgeUseCase.swift in Sources */,
 				3D2A14E12E90F82100A94CB2 /* UserModel.swift in Sources */,
+				3DEC72072E94CFF5009ED399 /* FunctionSwitcher.swift in Sources */,
 				3D2A14AC2E90EF9F00A94CB2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

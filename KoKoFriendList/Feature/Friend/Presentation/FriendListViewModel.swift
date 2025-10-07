@@ -8,45 +8,49 @@
 import Combine
 import Foundation
 
-enum PageType {
-    case empty
-    case friendListOnly
-    case friendListAndSInvite
-}
-
-protocol FriendListViewModel {
-    var friends: [FriendModel] { get set }
-    var user: UserModel? { get set }
-    func fetchFriends() async
-    func fetchUserInfo() async
-}
-
-
-
-
-class FriendListViewModelImpl: FriendListViewModel, ObservableObject {
+class FriendListViewModel {
     
-    @MainActor @Published var friends: [FriendModel] = []
+    @Published var friends: [FriendModel] = []
     
-    @MainActor @Published var user: UserModel?
+    @Published var user: UserModel?
+    
+    @Published var invites: [FriendModel] = []
+    
+    @Published var currentTab: FriendListTab = .friends
+    
+    @Published var tabBadge: [FriendListTab: Int] = [:]
+    
+    @Published var isOnFocus: Bool = false
+    
+    var getBadgeUseCase: GetBadgeUseCase
     
     var getFriendListUseCase: FriendListFetchingUseCase
     
     var getUserInfoUseCase: GetUserUseCase
     
+    var type: FriendListPageType
     
-    init(getFriendListUseCase: FriendListFetchingUseCase,
-         getUserInfoUseCase: GetUserUseCase) {
-        
+    
+    init(
+        getFriendListUseCase: FriendListFetchingUseCase,
+        getUserInfoUseCase: GetUserUseCase,
+        getBadgeUseCase: GetBadgeUseCase,
+        type: FriendListPageType
+    ) {
         self.getFriendListUseCase = getFriendListUseCase
         self.getUserInfoUseCase = getUserInfoUseCase
+        self.getBadgeUseCase = getBadgeUseCase
+        self.type = type
     }
     
     
     
     func fetchFriends() async {
         do {
-            self.friends = try await self.getFriendListUseCase.execute()
+            let dataSourece = try await self.getFriendListUseCase.execute()
+            self.invites = dataSourece.filter({$0.status == .invited})
+            self.friends = dataSourece.filter({$0.status != .invited})
+            
             
         } catch let error as DomainError {
             // TODO: - Toast
@@ -70,4 +74,13 @@ class FriendListViewModelImpl: FriendListViewModel, ObservableObject {
             print(error.localizedDescription)
         }
     }
+    
+    func fetchBadge() async {
+        
+        let badge = await self.getBadgeUseCase.execute(self.type)
+        self.tabBadge = badge
+        
+        
+    }
+    
 }

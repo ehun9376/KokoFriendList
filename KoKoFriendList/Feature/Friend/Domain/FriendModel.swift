@@ -6,7 +6,7 @@
 
 import Foundation
 
-enum StatusType: Int {
+enum FriendStatus: Int {
     ///0 邀請送出
     case invited = 0
     
@@ -15,11 +15,22 @@ enum StatusType: Int {
     
     ///2 邀請中
     case inviting = 2
+    
+    var title: String {
+        switch self {
+        case .invited:
+            return "邀請送出"
+        case .finish:
+            return "已完成"
+        case .inviting:
+            return "邀請中"
+        }
+    }
 }
 
 struct FriendModel {
     let name: String
-    let status: StatusType
+    let status: FriendStatus
     let isTop: Bool
     let fid: String
     let updateDate: Date

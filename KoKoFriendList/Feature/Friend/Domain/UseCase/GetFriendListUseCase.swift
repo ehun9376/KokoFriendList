@@ -49,7 +49,9 @@ class GetFriendListUseCase: FriendListFetchingUseCase {
             }
         }
         
-        return Array(bestByFID.values)
+        
+        
+        return bestByFID.values.sorted(by: {$0.fid < $1.fid})
     }
  
 }

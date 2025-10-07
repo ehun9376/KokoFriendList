@@ -11,7 +11,7 @@ extension FriendDTO {
     func toDomain() -> [FriendModel] {
         
         return self.response.map({
-            return FriendModel(name: $0.name, status: .init(rawValue: $0.status) ?? StatusType.finish, isTop: $0.isTop == "1" , fid: $0.fid, updateDate: $0.updateDate.toDate() ?? Date())
+            return FriendModel(name: $0.name, status: .init(rawValue: $0.status) ?? FriendStatus.finish, isTop: $0.isTop == "1" , fid: $0.fid, updateDate: $0.updateDate.toDate() ?? Date())
         })
         
     }

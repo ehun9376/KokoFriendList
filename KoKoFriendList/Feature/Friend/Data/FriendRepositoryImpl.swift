@@ -8,7 +8,11 @@
 import Foundation
 
 class FriendRepositoryImpl: FriendRepository {
+ 
     
+
+    
+ 
     var apiService: APIServiceProtocol
     
     init(apiService: APIServiceProtocol) {
@@ -73,6 +77,18 @@ class FriendRepositoryImpl: FriendRepository {
             throw DomainError.unknown(message: error.localizedDescription)
         }
  
+    }
+    
+    func fetchFriendBadge(_ type: FriendListPageType) async -> [FriendListTab : Int] {
+        switch type {
+        case .empty:
+            return [.friends: 0, .chat: 0]
+        case .friendListOnly:
+            return [.friends: 0, .chat: 100]
+        case .friendListAndInvite:
+            return [.friends: 2, .chat: 100]
+        }
+        
     }
     
     

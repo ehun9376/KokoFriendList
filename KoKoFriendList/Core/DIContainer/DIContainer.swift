@@ -44,6 +44,11 @@ class FriendListDIContainer: Resolver {
             return .init(repository: self.resolve())
         }
         
+        self.register(GetBadgeUseCase.self) { [weak self] in
+            guard let self else { fatalError() }
+            return .init(repository: self.resolve())
+        }
+        
         self.register(GetFriendListAndInviteUseCase.self) { [weak self] in
             guard let self else { fatalError() }
             return .init(repository: self.resolve())
@@ -69,7 +74,7 @@ class FriendListDIContainer: Resolver {
         factories[ObjectIdentifier(type)] = factory
     }
     
-    func resolveFriendListUseCase(for type: PageType) -> FriendListFetchingUseCase {
+    func resolveFriendListUseCase(for type: FriendListPageType) -> FriendListFetchingUseCase {
          switch type {
          case .empty:
              let useCase: GetFriendListEmptyUseCase = self.resolve()
@@ -77,7 +82,7 @@ class FriendListDIContainer: Resolver {
          case .friendListOnly:
              let useCase: GetFriendListUseCase = self.resolve()
              return useCase
-         case .friendListAndSInvite:
+         case .friendListAndInvite:
              let useCase: GetFriendListAndInviteUseCase = self.resolve()
              return useCase
          }
