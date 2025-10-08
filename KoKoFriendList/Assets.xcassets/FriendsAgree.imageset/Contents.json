@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icAddFriendWhite.png",
+      "filename" : "btnFriendsAgree.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icAddFriendWhite@2x.png",
+      "filename" : "btnFriendsAgree@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icAddFriendWhite@3x.png",
+      "filename" : "btnFriendsAgree@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

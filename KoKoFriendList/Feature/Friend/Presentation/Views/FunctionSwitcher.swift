@@ -10,6 +10,7 @@ class FunctionSwitcher: UIView {
     
     // MARK: - Properties
     private var tabs: [FriendListTab] = []
+    
     private var onTabSelected: ((FriendListTab) -> ())?
     
     private var stackView = UIStackView()
@@ -17,9 +18,12 @@ class FunctionSwitcher: UIView {
     private var slider = UIView()
     
     private var sliderLeadingConstraint: NSLayoutConstraint?
+    
     private var tabButtons: [FriendListTab: TabButton] = [:]
     
     let offset: CGFloat = 20.0
+    
+    let sliderWidth: CGFloat = 20.0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,7 +62,7 @@ class FunctionSwitcher: UIView {
 
             self.slider.heightAnchor.constraint(equalToConstant: 4),
             self.slider.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            self.slider.widthAnchor.constraint(equalToConstant: 30)
+            self.slider.widthAnchor.constraint(equalToConstant: self.sliderWidth)
         ])
 
         self.sliderLeadingConstraint = self.slider.leadingAnchor.constraint(equalTo: self.leadingAnchor)
@@ -81,10 +85,8 @@ class FunctionSwitcher: UIView {
             self.tabButtons[tab] = button
         }
         
-        // 先選中按鈕
         self.tabButtons[currentTab]?.simpleButton.isSelected = true
         
-        // 在下一個 run loop 中計算 slider 位置，確保 layout 已完成
         DispatchQueue.main.async { [weak self] in
             self?.updateSliderPosition(for: currentTab, animated: false)
         }
@@ -111,7 +113,7 @@ class FunctionSwitcher: UIView {
         
         let buttonCenterInSwitcher = targetButton.convert(CGPoint(x: targetButton.bounds.midX, y: 0), to: self)
         
-        let sliderHalfWidth: CGFloat = 15.0
+        let sliderHalfWidth: CGFloat = self.sliderWidth / 2
         let sliderOffset = buttonCenterInSwitcher.x - sliderHalfWidth
         
         self.sliderLeadingConstraint?.constant = sliderOffset

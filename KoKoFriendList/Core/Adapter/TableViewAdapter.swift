@@ -7,54 +7,83 @@
 
 import UIKit
 
-//TODO: - 拓展成section
-
-enum TableViewCellInitType {
+enum TableViewWidgetsInitType {
     case code(type: UITableViewCell.Type, cellID: String)
-    case nib(nibName: String, bundle: Bundle?, cellID: String)
+    case nib(nibName: String, bundle: Bundle?, viewID: String)
 }
 
-protocol CellRowModel {
-    func getTableViewCellInitType() -> TableViewCellInitType
+protocol TableViewWidgetViewModel {
+    func getTableViewCellInitType() -> TableViewWidgetsInitType
+}
+
+protocol CellRowModel: TableViewWidgetViewModel {
     func cellDidSelect(model: CellRowModel)
     var cellDidSelectAction: ((CellRowModel) -> ())? { get set }
 }
 
-protocol CellViewBase {
-    func setupCellView(model: CellRowModel)
+protocol TableViewWidgetBinding {
+    func setupView(model: TableViewWidgetViewModel)
+}
+
+class SectionModel {
+    var headerViewModel: TableViewWidgetViewModel?
+    var rowModels: [CellRowModel]
+    
+    init(
+        headerViewModel: TableViewWidgetViewModel?,
+        rowModels: [CellRowModel]
+    ) {
+        self.headerViewModel = headerViewModel
+        self.rowModels = rowModels
+    }
 }
 
 class TableViewAdapter: NSObject {
     
     var tableView: UITableView
     
-    var rowModels: [CellRowModel] = []
+    var sectionModels: [SectionModel] = []
     
     private var refreshControl: UIRefreshControl?
     private var refreshAction: (() -> ())?
     private var refreshAsyncAction: (() async -> ())?
     
-    init(tableView: UITableView) {
+    init(
+        tableView: UITableView
+    ) {
         self.tableView = tableView
         super.init()
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
     
-    func updateRowModels(_ models: [CellRowModel]) {
-        self.rowModels = models
-        self.regisCells(models: models)
+    func updateRowModels(_ models: [SectionModel]) {
+        self.sectionModels = models
+        self.regisCells(sections: models)
         self.tableView.reloadData()
     }
     
-    func regisCells(models: [CellRowModel]) {
-        for model in models {
-            switch model.getTableViewCellInitType() {
-            case .code(let type, let cellID):
-                self.tableView.register(type, forCellReuseIdentifier: cellID)
-            case .nib(let nibName, let bundle, let cellID):
-                self.tableView.register(UINib(nibName: nibName, bundle: bundle), forCellReuseIdentifier: cellID)
+    func regisCells(sections: [SectionModel]) {
+
+        for section in sections {
+            if let type = section.headerViewModel?.getTableViewCellInitType() {
+                switch type {
+                case .nib(let nibName, let bundle, let cellID):
+                    self.tableView.register(.init(nibName: nibName, bundle: bundle), forHeaderFooterViewReuseIdentifier: cellID)
+                default:
+                    fatalError("目前只支援nib的section header")
+                }
             }
+            
+            for rowModel in section.rowModels {
+                switch rowModel.getTableViewCellInitType() {
+                case .code(let type, let cellID):
+                    self.tableView.register(type, forCellReuseIdentifier: cellID)
+                case .nib(let nibName, let bundle, let cellID):
+                    self.tableView.register(.init(nibName: nibName, bundle: bundle), forCellReuseIdentifier: cellID)
+                }
+            }
+        
         }
     }
     
@@ -62,7 +91,7 @@ class TableViewAdapter: NSObject {
         
     /// 添加下拉刷新功能（同步版本）
     /// - Parameter action: 下拉時要執行的閉包
-    func addRefreshControl(action: @escaping () -> Void) {
+    func addRefreshControl(action: (() -> ())?) {
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         self.tableView.refreshControl = refresh
@@ -73,7 +102,7 @@ class TableViewAdapter: NSObject {
     
     /// 添加下拉刷新功能（異步版本，自動結束動畫）
     /// - Parameter action: 下拉時要執行的異步閉包，執行完成後自動結束動畫
-    func addRefreshControl(action: @escaping () async -> Void) {
+    func addRefreshControl(action: (() async -> ())?) {
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         self.tableView.refreshControl = refresh
@@ -115,27 +144,52 @@ class TableViewAdapter: NSObject {
 }
 
 extension TableViewAdapter: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.sectionModels.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.rowModels.count
+        return self.sectionModels[section].rowModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.sectionModels[section].headerViewModel == nil ? 0.01 : UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = self.rowModels[indexPath.row]
+        let model = self.sectionModels[indexPath.section].rowModels[indexPath.row]
         
         switch model.getTableViewCellInitType() {
         case .code(_, let cellID), .nib(_, _, let cellID):
             let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-            if let cell = cell as? CellViewBase {
-                cell.setupCellView(model: model)
+            if let cell = cell as? TableViewWidgetBinding {
+                cell.setupView(model: model)
             }
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerModel = self.sectionModels[section].headerViewModel else { return nil }
+        
+        switch headerModel.getTableViewCellInitType() {
+        case .nib(_, _, let viewID):
+            let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: viewID) ?? UITableViewHeaderFooterView(reuseIdentifier: viewID)
+            if let headerView = headerView as? TableViewWidgetBinding {
+                headerView.setupView(model: headerModel )
+            }
+            return headerView
+        default:
+            fatalError("目前只支援nib的section header")
+        }
+
     }
 }
 
 extension TableViewAdapter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = self.rowModels[indexPath.row]
+        let model = self.sectionModels[indexPath.section].rowModels[indexPath.row]
         model.cellDidSelect(model: model)
     }
 }

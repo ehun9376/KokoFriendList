@@ -13,9 +13,12 @@ class FriendListUseCaseTests: XCTestCase {
     
     class MockFirendsRepository: FriendRepository {
         
+        
         var result: Result<[FriendModel], DomainError> = .success([])
         
         var fetchFriends2Result: Result<[FriendModel], DomainError> = .success([])
+        
+        var badgeResult: Result<[FriendListTab : Int], DomainError> = .success([:])
         
         func fetchFriends1() async throws -> [FriendModel] {
             
@@ -52,6 +55,15 @@ class FriendListUseCaseTests: XCTestCase {
                 return friends
             case .failure:
                 throw DomainError.unknown(message: "")
+            }
+        }
+        
+        func fetchFriendBadge(_ type: KoKoFriendList.FriendListPageType) async -> [KoKoFriendList.FriendListTab : Int] {
+            switch badgeResult {
+            case .success(let badge):
+                return badge
+            case .failure:
+                return [:]
             }
         }
         

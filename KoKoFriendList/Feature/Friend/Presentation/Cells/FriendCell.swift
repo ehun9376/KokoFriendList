@@ -9,6 +9,8 @@ import UIKit
 
 class FriendCellRowModel: CellRowModel {
     
+    var isLoading: Bool = false
+    
     var isTop: Bool = false
     
     var imageURL: String?
@@ -20,12 +22,14 @@ class FriendCellRowModel: CellRowModel {
     var cellDidSelectAction: ((any CellRowModel) -> ())?
     
     init(
-        isTop: Bool,
+        isLoading: Bool = false,
+        isTop: Bool = false,
         imageURL: String? = nil,
-        name: String,
-        status: FriendStatus,
-        cellDidSelectAction: ((any CellRowModel) -> Void)? = nil
+        name: String = "",
+        status: FriendStatus = .finish,
+        cellDidSelectAction: ((CellRowModel) -> ())? = nil
     ) {
+        self.isLoading = isLoading
         self.isTop = isTop
         self.imageURL = imageURL
         self.name = name
@@ -33,8 +37,8 @@ class FriendCellRowModel: CellRowModel {
         self.cellDidSelectAction = cellDidSelectAction
     }
     
-    func getTableViewCellInitType() -> TableViewCellInitType {
-        return .nib(nibName: "FriendCell", bundle: nil, cellID: "FriendCell")
+    func getTableViewCellInitType() -> TableViewWidgetsInitType {
+        return .nib(nibName: "FriendCell", bundle: nil, viewID: "FriendCell")
     }
     
     func cellDidSelect(model: any CellRowModel) {
@@ -45,7 +49,7 @@ class FriendCellRowModel: CellRowModel {
 
 class FriendCell: UITableViewCell {
     
-    @IBOutlet weak var startImageView: UIImageView!
+    @IBOutlet weak var starImageView: UIImageView!
     
     @IBOutlet weak var headImageView: UIImageView!
     
@@ -59,7 +63,7 @@ class FriendCell: UITableViewCell {
         
         self.selectionStyle = .none
         
-        self.startImageView.image = .init(named: "FriendsStar")
+        self.starImageView.image = .init(named: "FriendsStar")
         
         self.buttonStackView.axis = .horizontal
         self.buttonStackView.spacing = 10
@@ -69,7 +73,7 @@ class FriendCell: UITableViewCell {
         
         self.headImageView.layer.cornerRadius = 20
         
-        self.startImageView.isHidden = true
+        self.starImageView.isHidden = true
         
         self.lineView.backgroundColor = .grayE4E4E4
     }
@@ -118,28 +122,54 @@ class FriendCell: UITableViewCell {
     
 }
 
-extension FriendCell: CellViewBase {
-    func setupCellView(model: any CellRowModel) {
+extension FriendCell: TableViewWidgetBinding {
+    
+    
+    func setupView(model: any TableViewWidgetViewModel) {
         guard let model = model as? FriendCellRowModel else { return }
         
-        self.startImageView.isHidden = !model.isTop
-        
-        self.nameLabel.text = model.name
-        
-        self.buttonStackView.removeAllArrangedSubviews()
-        
-        self.buttonStackView.addArrangedSubview(self.createTransferButton())
-        
-        if let button = self.createStatusButton(model.status) {
-            self.buttonStackView.addArrangedSubview(button)
-        }
-        
-        
-        
-        if let _ = model.imageURL {
-            //TODO : - 下載圖片
+        if model.isLoading {
+            self.starImageView.isHidden = false
+            self.addFlashLayer()
+           
         } else {
-            self.headImageView.image = .init(named: "FriendsListDefault")
+            self.removeFlashOverlay()
+            self.starImageView.isHidden = !model.isTop
+            
+            self.nameLabel.text = model.name
+            
+            self.buttonStackView.removeAllArrangedSubviews()
+            
+            self.buttonStackView.addArrangedSubview(self.createTransferButton())
+            
+            if let button = self.createStatusButton(model.status) {
+                self.buttonStackView.addArrangedSubview(button)
+            }
+            
+            
+            
+            if let _ = model.imageURL {
+                //TODO : - 下載圖片
+            } else {
+                self.headImageView.image = .init(named: "FriendsListDefault")
+            }
         }
+        
+  
     }
+    
+    func addFlashLayer() {
+        self.starImageView.addFlashLayer(frame: .init(x: 0, y: 0, width: 20, height: 20))
+        self.nameLabel.addFlashLayer(frame: .init(x: 0, y: 0, width: 50, height: 25))
+        self.buttonStackView.addFlashLayer(frame: .init(x: 0, y: 0, width: 50, height: 25))
+        self.headImageView.addFlashLayer(frame: .init(x: 0, y: 0, width: 40, height: 40), cornerRadius: 20)
+    }
+    
+    func removeFlashOverlay() {
+        self.starImageView.removeFlashLayer()
+        self.nameLabel.removeFlashLayer()
+        self.buttonStackView.removeFlashLayer()
+        self.headImageView.removeFlashLayer()
+    }
+    
 }

@@ -100,9 +100,9 @@ class TopUserInfoView: UIView {
     }
     
     func removeFlastLayer() {
-        self.nameLabel.removeGrayOverlay()
-        self.idLabel.removeGrayOverlay()
-        self.imageView.removeGrayOverlay()
+        self.nameLabel.removeFlashLayer()
+        self.idLabel.removeFlashLayer()
+        self.imageView.removeFlashLayer()
 
     }
     

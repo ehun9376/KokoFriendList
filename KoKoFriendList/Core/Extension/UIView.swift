@@ -66,7 +66,7 @@ extension UIView {
         grayOverlayLayer.add(flickerAnimation, forKey: "flickerAnimation")
     }
     
-    func removeGrayOverlay() {
+    func removeFlashLayer() {
         if let grayOverlayLayer = layer.sublayers?.first(where: { $0.name == UIView.grayOverlayLayerName }){
             grayOverlayLayer.removeAnimation(forKey: "flickerAnimation")
             grayOverlayLayer.removeFromSuperlayer()

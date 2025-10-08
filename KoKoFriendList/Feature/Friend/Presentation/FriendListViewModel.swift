@@ -10,11 +10,11 @@ import Foundation
 
 class FriendListViewModel {
     
-    @Published var friends: [FriendModel] = []
+    @Published var friends: [FriendModel]?
     
     @Published var user: UserModel?
     
-    @Published var invites: [FriendModel] = []
+    @Published var invites: [FriendModel]?
     
     @Published var currentTab: FriendListTab = .friends
     
@@ -22,6 +22,9 @@ class FriendListViewModel {
     
     @Published var isOnFocus: Bool = false
     
+    @Published var filteredFriends: [FriendModel]?
+
+        
     var getBadgeUseCase: GetBadgeUseCase
     
     var getFriendListUseCase: FriendListFetchingUseCase
@@ -50,13 +53,10 @@ class FriendListViewModel {
             let dataSourece = try await self.getFriendListUseCase.execute()
             self.invites = dataSourece.filter({$0.status == .invited})
             self.friends = dataSourece.filter({$0.status != .invited})
-            
-            
+            self.filteredFriends = self.friends
         } catch let error as DomainError {
-            // TODO: - Toast
             print(error.localizedDescription)
         } catch {
-            // Handle any non-DomainError errors to make the catch exhaustive
             print(error.localizedDescription)
         }
     }
@@ -67,10 +67,8 @@ class FriendListViewModel {
             let user = try await self.getUserInfoUseCase.execute()
             self.user = user
         } catch let error as DomainError {
-            // TODO: - Toast
             print(error.localizedDescription)
         } catch {
-            // Handle any non-DomainError errors to make the catch exhaustive
             print(error.localizedDescription)
         }
     }
@@ -80,6 +78,19 @@ class FriendListViewModel {
         let badge = await self.getBadgeUseCase.execute(self.type)
         self.tabBadge = badge
         
+    }
+    
+    func filterFriends(by keyword: String) {
+        guard let friends = self.friends else {
+            self.filteredFriends = nil
+            return
+        }
+        
+        if keyword.isEmpty {
+            self.filteredFriends = friends
+        } else {
+            self.filteredFriends = friends.filter { $0.name.contains(keyword) }
+        }
         
     }
     

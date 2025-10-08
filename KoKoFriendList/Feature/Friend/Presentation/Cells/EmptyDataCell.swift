@@ -7,46 +7,24 @@
 
 import UIKit
 
-class EmptyDataCellRowModel: CellRowModel {
-    
-  
-    var imageName: String = ""
-    
-    var title: String = ""
-    
-    var message: String = ""
-    
-    var buttonTitle: String = ""
-    
-    var butttonImageName: String?
-    
-    var bottomAttr: NSAttributedString?
-    
+struct EmptyDataCellRowModel: CellRowModel {
+
     var buttonAction: (()->())?
     
     var cellDidSelectAction: ((any CellRowModel) -> ())?
 
     
-    init(imageName: String,
-         title: String,
-         message: String,
-         buttonTitle: String,
-         butttonImageName: String? = nil,
-         bottomAttr: NSAttributedString? = nil,
-         buttonAction: (()->())? = nil,
-         cellDidSelectAction: ((any CellRowModel) -> Void)? = nil) {
-        self.imageName = imageName
-        self.title = title
-        self.message = message
-        self.buttonTitle = buttonTitle
-        self.butttonImageName = butttonImageName
-        self.bottomAttr = bottomAttr
+    init(
+        buttonAction: (()->())? = nil,
+        cellDidSelectAction: ((any CellRowModel) -> Void)? = nil
+    ) {
+        self.buttonAction = buttonAction
         self.cellDidSelectAction = cellDidSelectAction
     }
     
     
-    func getTableViewCellInitType() -> TableViewCellInitType {
-        return .nib(nibName: "EmptyDataCell", bundle: nil, cellID: "EmptyDataCell")
+    func getTableViewCellInitType() -> TableViewWidgetsInitType {
+        return .nib(nibName: "EmptyDataCell", bundle: nil, viewID: "EmptyDataCell")
     }
     
     func cellDidSelect(model: any CellRowModel) {
@@ -72,23 +50,30 @@ class EmptyFriendCell: UITableViewCell {
     override func awakeFromNib() {
         self.selectionStyle = .none
         
+        self.emptyImageView?.image = .init(named: "FriendsEmpty")
+        
         self.titleLabel.textColor = .black
         self.titleLabel.font = .systemFont(ofSize: 22, weight: .bold)
         self.titleLabel.numberOfLines = 0
         self.titleLabel.textAlignment = .center
+        self.titleLabel.text = "就從加好友開始吧:)"
         
         self.messageLabel.textColor = .grayA0A0A0
         self.messageLabel.font = .systemFont(ofSize: 16)
         self.messageLabel.numberOfLines = 0
         self.messageLabel.textAlignment = .center
+        self.messageLabel.text = "與好友們一起用 KOKO 聊起來！\n還能互相收付款、發紅包喔：）"
         
         self.emptyImageView.contentMode = .scaleAspectFit
         
         self.actionButton.setTitleColor(.white, for: .normal)
+        self.actionButton.setTitle("加好友", for: .normal)
+        self.buttonImageView.image = .init(named: "AddFriendWhite")
         
         self.bottomMessageLabel.numberOfLines = 0
         self.bottomMessageLabel.textAlignment = .center
-        
+        self.bottomMessageLabel.attributedText = self.createKokoIDAttributedString()
+ 
     }
     
     override func layoutSubviews() {
@@ -96,19 +81,25 @@ class EmptyFriendCell: UITableViewCell {
         self.actionButton.setGradientBackground(startColor: .green56B30B, endColor: .greenA6CC42)
     }
     
+    func createKokoIDAttributedString() -> NSAttributedString {
+        
+        var attributedString = NSMutableAttributedString(string: "")
+        attributedString = attributedString.add(text: "幫助好友更快找到你？", attrDict: [.foregroundColor: UIColor.grayA0A0A0, .font: UIFont.systemFont(ofSize: 13)])
+        
+        attributedString = attributedString.add(text: "設定 KOKO ID", attrDict: [.foregroundColor: UIColor.pinkEC008C, .font: UIFont.systemFont(ofSize: 13), .underlineStyle: NSUnderlineStyle.single.rawValue, .underlineColor: UIColor.pinkEC008C])
+    
+        
+        return attributedString
+    }
+    
     
 }
 
-extension EmptyFriendCell: CellViewBase {
-    func setupCellView(model: any CellRowModel) {
-        guard let model = model as? EmptyDataCellRowModel else { return }
+extension EmptyFriendCell: TableViewWidgetBinding {
+
+    func setupView(model: any TableViewWidgetViewModel) {
         
-        self.emptyImageView?.image = .init(named: model.imageName)
-        self.titleLabel.text = model.title
-        self.messageLabel.text = model.message
-        self.bottomMessageLabel.attributedText = model.bottomAttr
-        self.actionButton.setTitle(model.buttonTitle, for: .normal)
-        self.buttonImageView.image = .init(named: model.butttonImageName ?? "")
+      
         
         
     }

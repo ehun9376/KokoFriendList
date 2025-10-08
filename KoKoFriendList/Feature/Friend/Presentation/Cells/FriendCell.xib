@@ -72,7 +72,7 @@
                 <outlet property="headImageView" destination="oPj-xX-vP3" id="qez-T9-xrj"/>
                 <outlet property="lineView" destination="TCj-fK-1SX" id="wjT-J5-L7E"/>
                 <outlet property="nameLabel" destination="fot-rW-S5F" id="3X4-Ww-mVU"/>
-                <outlet property="startImageView" destination="udD-BE-cOM" id="28N-0H-DU9"/>
+                <outlet property="starImageView" destination="udD-BE-cOM" id="28N-0H-DU9"/>
             </connections>
             <point key="canvasLocation" x="-267.17557251908397" y="188.38028169014086"/>
         </tableViewCell>

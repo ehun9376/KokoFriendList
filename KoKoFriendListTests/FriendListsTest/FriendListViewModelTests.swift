@@ -23,15 +23,14 @@ class FriendListViewModelTests: XCTestCase {
         await viewModel.fetchFriends()
         
         //不管比數應該要fid不重複
-        let fids = viewModel.friends.map({$0.fid})
-        
-        if fids.count <= 0 {
-            XCTFail("Should be have some data")
-        } else {
-            XCTAssertEqual(Set(fids).count, fids.count)
+        if let fids = viewModel.friends?.map({$0.fid}) {
+            if fids.count <= 0 {
+                XCTFail("Should be have some data")
+            } else {
+                XCTAssertEqual(Set(fids).count, fids.count)
+            }
         }
-        
-        
+
     }
     
     func test_load_empty() async {
@@ -40,7 +39,7 @@ class FriendListViewModelTests: XCTestCase {
                                             getBadgeUseCase: self.contianer.resolve(),
                                             type: .empty)
         await viewModel.fetchFriends()
-        XCTAssertTrue(viewModel.friends.count <= 0)
+        XCTAssertTrue((viewModel.friends?.count ?? 0) <= 0)
     }
     
     func test_load_user_in_friendListOnly() async {

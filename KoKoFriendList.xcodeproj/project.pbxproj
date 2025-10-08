@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360B2DB42E9634AA00DEDF86 /* SearchFriendHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B2DB32E9634A100DEDF86 /* SearchFriendHeaderView.swift */; };
+		360B2DB72E9635E800DEDF86 /* SearchFriendHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 360B2DB62E9635E800DEDF86 /* SearchFriendHeaderView.xib */; };
+		360B2E8E2E9645FF00DEDF86 /* InviteFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B2E8D2E9645ED00DEDF86 /* InviteFriendsView.swift */; };
 		3D2A14A62E90EF9F00A94CB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A14A12E90EF9F00A94CB2 /* Main.storyboard */; };
 		3D2A14A72E90EF9F00A94CB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A149F2E90EF9F00A94CB2 /* LaunchScreen.storyboard */; };
 		3D2A14A82E90EF9F00A94CB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A149C2E90EF9F00A94CB2 /* Assets.xcassets */; };
@@ -89,6 +92,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		360B2DB32E9634A100DEDF86 /* SearchFriendHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFriendHeaderView.swift; sourceTree = "<group>"; };
+		360B2DB62E9635E800DEDF86 /* SearchFriendHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFriendHeaderView.xib; sourceTree = "<group>"; };
+		360B2E8D2E9645ED00DEDF86 /* InviteFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendsView.swift; sourceTree = "<group>"; };
 		3D2A149B2E90EF9F00A94CB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D2A149C2E90EF9F00A94CB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D2A149E2E90EF9F00A94CB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -182,6 +188,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		360B2DB22E96101200DEDF86 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				360B2DB32E9634A100DEDF86 /* SearchFriendHeaderView.swift */,
+				360B2DB62E9635E800DEDF86 /* SearchFriendHeaderView.xib */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
 		3D2A14992E90EF9F00A94CB2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +302,7 @@
 		3D2A14C72E90F35800A94CB2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				360B2DB22E96101200DEDF86 /* HeaderView */,
 				3DEC71E32E9410D0009ED399 /* Cells */,
 				3DEC71DD2E941027009ED399 /* Views */,
 				3D41A1992E914A620027135B /* FriendListViewModel.swift */,
@@ -363,13 +379,6 @@
 			path = UserTests;
 			sourceTree = "<group>";
 		};
-		3D2A14EB2E91034A00A94CB2 /* KoKoFriendListUITests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = KoKoFriendListUITests;
-			sourceTree = "<group>";
-		};
 		3D2A154D2E9119B700A94CB2 /* FriendListsTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,7 +416,6 @@
 			children = (
 				3D2A14A42E90EF9F00A94CB2 /* KoKoFriendList */,
 				3D2A14AE2E90EFAB00A94CB2 /* KoKoFriendListTests */,
-				3D2A14EB2E91034A00A94CB2 /* KoKoFriendListUITests */,
 				3D4D4C502E90EE7300121DC6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -443,6 +451,7 @@
 			children = (
 				3DEC71DE2E94102D009ED399 /* TopUserInfoView.swift */,
 				3DEC72062E94CFE8009ED399 /* FunctionSwitcher.swift */,
+				360B2E8D2E9645ED00DEDF86 /* InviteFriendsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -640,6 +649,7 @@
 				3D2A14A62E90EF9F00A94CB2 /* Main.storyboard in Resources */,
 				3DEC72232E957F31009ED399 /* FriendCell.xib in Resources */,
 				3DEC72162E94FE8F009ED399 /* EmptyDataCell.xib in Resources */,
+				360B2DB72E9635E800DEDF86 /* SearchFriendHeaderView.xib in Resources */,
 				3DEC72032E94B458009ED399 /* color.xcassets in Resources */,
 				3D2A14A72E90EF9F00A94CB2 /* LaunchScreen.storyboard in Resources */,
 				3D2A14A82E90EF9F00A94CB2 /* Assets.xcassets in Resources */,
@@ -670,6 +680,7 @@
 				3DEC71D52E9169A1009ED399 /* DIContainer.swift in Sources */,
 				3D2A15462E9116BA00A94CB2 /* GetFriendListUseCase.swift in Sources */,
 				3DEC71DF2E941040009ED399 /* TopUserInfoView.swift in Sources */,
+				360B2E8E2E9645FF00DEDF86 /* InviteFriendsView.swift in Sources */,
 				3D2A14DC2E90F77C00A94CB2 /* UserRepositoryImpl.swift in Sources */,
 				3DEC72052E94BBD6009ED399 /* UIView.swift in Sources */,
 				3D2A14E32E90F9A300A94CB2 /* UserEndPoints.swift in Sources */,
@@ -712,6 +723,7 @@
 				3DEC720F2E94E6B4009ED399 /* UIStackView.swift in Sources */,
 				3D41A19A2E914A630027135B /* FriendListViewModel.swift in Sources */,
 				3DEC721F2E952078009ED399 /* GetBadgeUseCase.swift in Sources */,
+				360B2DB42E9634AA00DEDF86 /* SearchFriendHeaderView.swift in Sources */,
 				3D2A14E12E90F82100A94CB2 /* UserModel.swift in Sources */,
 				3DEC72072E94CFF5009ED399 /* FunctionSwitcher.swift in Sources */,
 				3D2A14AC2E90EF9F00A94CB2 /* AppDelegate.swift in Sources */,
