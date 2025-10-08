@@ -25,7 +25,7 @@ protocol TableViewWidgetBinding {
     func setupView(model: TableViewWidgetViewModel)
 }
 
-class SectionModel {
+struct SectionModel {
     var headerViewModel: TableViewWidgetViewModel?
     var rowModels: [CellRowModel]
     

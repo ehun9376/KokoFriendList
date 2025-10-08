@@ -205,7 +205,7 @@ class FriendListViewController: UIViewController {
     }
     
     func setupLazyLoadingRow() {
-        let sectionModel: SectionModel = .init(headerViewModel: nil, rowModels: [])
+        var sectionModel: SectionModel = .init(headerViewModel: nil, rowModels: [])
 
         for _ in 0...5 {
             let lazyLoadingFriendRow = FriendCellRowModel(isLoading: true)
@@ -216,7 +216,7 @@ class FriendListViewController: UIViewController {
     
     func setupFriendRow(filteredFriends: [FriendModel]? = nil, friends: [FriendModel]? = nil) {
         
-        let sectionModel: SectionModel = .init(headerViewModel: nil, rowModels: [])
+        var sectionModel: SectionModel = .init(headerViewModel: nil, rowModels: [])
         
         //兩個都是 nil 就表示還在Loading
         guard let filteredFriends = filteredFriends, let friends = friends else {
