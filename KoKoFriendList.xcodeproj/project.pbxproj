@@ -72,6 +72,7 @@
 		3DEC721F2E952078009ED399 /* GetBadgeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC721E2E952076009ED399 /* GetBadgeUseCase.swift */; };
 		3DEC72212E957B6D009ED399 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC72202E957B66009ED399 /* FriendCell.swift */; };
 		3DEC72232E957F31009ED399 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DEC72222E957F31009ED399 /* FriendCell.xib */; };
+		3DEC72252E96BC70009ED399 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3DEC72242E96BC70009ED399 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,7 @@
 		3DEC721E2E952076009ED399 /* GetBadgeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBadgeUseCase.swift; sourceTree = "<group>"; };
 		3DEC72202E957B66009ED399 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		3DEC72222E957F31009ED399 /* FriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
+		3DEC72242E96BC70009ED399 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +416,7 @@
 		3D4D4C462E90EE7300121DC6 = {
 			isa = PBXGroup;
 			children = (
+				3DEC72242E96BC70009ED399 /* README.md */,
 				3D2A14A42E90EF9F00A94CB2 /* KoKoFriendList */,
 				3D2A14AE2E90EFAB00A94CB2 /* KoKoFriendListTests */,
 				3D4D4C502E90EE7300121DC6 /* Products */,
@@ -652,6 +655,7 @@
 				360B2DB72E9635E800DEDF86 /* SearchFriendHeaderView.xib in Resources */,
 				3DEC72032E94B458009ED399 /* color.xcassets in Resources */,
 				3D2A14A72E90EF9F00A94CB2 /* LaunchScreen.storyboard in Resources */,
+				3DEC72252E96BC70009ED399 /* README.md in Resources */,
 				3D2A14A82E90EF9F00A94CB2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

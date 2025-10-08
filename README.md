@@ -1,12 +1,25 @@
-## 🏗️ 架構設計
 
-本專案採用 **Clean Architecture** 設計模式，確保程式碼的可維護性、可測試性和擴展性。
+## 主要需求
+
+無好友畫面（API 2-(5)）
+只有好友列表（API 2-(2)、2-(3) 合併，依據 fid 取 updateDate 較新資料）
+好友列表含邀請（API 2-(4)）
+搜尋功能：對好友姓名進行關鍵字搜尋
+
+## 專案簡介
+
+- **Clean Architecture**：分離業務邏輯、資料存取與 UI 
+- **MVVM + Combine**：響應式資料綁定，確保 UI 與資料同步
+- **Swift Concurrency**：結合 async/await 與 Combine，兼具可讀性與響應式優勢
+- **依賴注入**：使用自定義 DI Container 降低模組耦合
+- **Table Adapter 模式**：封裝 TableView 邏輯，提升 ViewController 的單一職責原則
+
 
 ### 專案結構
 
 ```
 KoKoFriendList/
-├── Core/                   # 核心模組
+├── Core/                  # 核心模組
 │   ├── Adapter/           # 表格視圖適配器
 │   ├── DIContainer/       # 依賴注入容器
 │   ├── Errors/            # 錯誤處理
@@ -14,11 +27,11 @@ KoKoFriendList/
 │   ├── Network/           # 網路層
 │   └── Widgets/           # 共用 UI 元件
 ├── Feature/               # 功能模組
-│   ├── Enter/            # 入口頁面
-│   ├── Friend/           # 好友功能
-│   ├── Home/             # 主頁功能
-│   └── User/             # 用戶功能
-└── Assets/               # 資源文件
+│   ├── Enter/             # 入口頁面
+│   ├── Friend/            # 好友功能
+│   ├── Home/              # 主頁功能
+│   └── User/              # 用戶功能
+└── Assets/                # 資源文件
 ```
 
 ### 分層架構
