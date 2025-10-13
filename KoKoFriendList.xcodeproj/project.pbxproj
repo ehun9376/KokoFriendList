@@ -328,7 +328,6 @@
 		3D2A14CD2E90F6A100A94CB2 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				3D2A14D02E90F6B800A94CB2 /* Persentation */,
 				3D2A14D52E90F6DA00A94CB2 /* Domain */,
 				3D2A14CE2E90F6AB00A94CB2 /* Data */,
 			);
@@ -344,13 +343,6 @@
 				3D2A14DB2E90F77800A94CB2 /* UserRepositoryImpl.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		3D2A14D02E90F6B800A94CB2 /* Persentation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Persentation;
 			sourceTree = "<group>";
 		};
 		3D2A14D42E90F6DA00A94CB2 /* UseCase */ = {
